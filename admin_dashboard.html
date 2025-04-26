@@ -1,0 +1,19 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<h3>Registered Donors</h3>
+<table border="1">
+<tr><th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Blood Group</th></tr>
+{% for donor in donors %}
+<tr>
+  <td>{{ donor['DonorID'] }}</td>
+  <td>{{ donor['DonorName'] }}</td>
+  <td>{{ donor['DonorAge'] }}</td>
+  <td>{{ donor['DonorGender'] }}</td>
+  <td>{{ donor['DonorBloodGroup'] }}</td>
+</tr>
+{% endfor %}
+</table>
+<a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
